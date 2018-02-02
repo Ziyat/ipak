@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
@@ -8,30 +9,34 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Uztelecom',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'menu' => [
+            'class' => 'domain\modules\menu\Module',
+            'defaultRoute' => 'menu',
+        ],
+        'text' => [
+            'class' => 'domain\modules\text\Module',
+            'defaultRoute' => 'category',
+        ],
+        'contactform' => [
+            'class' => 'backend\modules\contactform\Module',
+        ],
+        'contact' => [
+            'class' => 'domain\modules\contact\Module',
+            'defaultRoute' => 'contact',
+        ],
+        'slider' => [
+            'class' => 'domain\modules\slider\Module',
+        ]
+    ],
     'components' => [
-        'request' => [
-            'csrfParam' => '_csrf-backend',
-            'cookieValidationKey' => $params['cookieValidationKey'],
-        ],
+
         'user' => [
-            'identityClass' => 'common\entities\User',
+            'identityClass' => 'backend\entities\User',
             'enableAutoLogin' => true,
-            'identityCookie' => [
-                'name' => '_identity',
-                'httpOnly' => true,
-                'domain' => $params['cookieDomain'],
-            ],
-        ],
-        'session' => [
-            'name' => '_session',
-            'cookieParams' => [
-                'domain' => $params['cookieDomain'],
-                'httpOnly' => true,
-            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -45,12 +50,24 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'backendUrlManager' => require __DIR__ . '/urlManager.php',
-        'frontendUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
-        'urlManager' => function () {
-            return Yii::$app->get('backendUrlManager');
-        },
-
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+            ],
+        ],
+    ],
+    'controllerMap' => [     'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'baseUrl' => SITE_FULL_NAME,
+                'basePath' => '@frontend/web',
+                'path' => 'webfiles',
+                'name' => 'webfiles',
+                // 'uploadMaxSize' => '5M',
+            ],
+        ],
     ],
     'as access' => [
         'class' => 'yii\filters\AccessControl',

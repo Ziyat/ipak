@@ -1,10 +1,10 @@
 # Your personal GitHub token
-github_token: fe90395e1e7f8cc8e18895e02965e88730158c07
+github_token: 5f358b610bcf66f58a88ca6a49113a986a5f230e
 # Read more: https://github.com/blog/1509-personal-api-tokens
 # You can generate it here: https://github.com/settings/tokens
 
 # Guest OS timezone
-timezone: Europe/London
+timezone: Asia/Tashkent
 
 # Are we need check box updates for every 'vagrant up'?
 box_check_update: false
@@ -13,7 +13,7 @@ box_check_update: false
 machine_name: ipak
 
 # Virtual machine IP
-ip: 192.168.44.99
+ip: 10.10.55.41
 
 # Virtual machine CPU cores number
 cpus: 1

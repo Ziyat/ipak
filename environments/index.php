@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The manifest of files that are local to specific environment.
  * This file returns a list of environments that the application
@@ -29,35 +30,37 @@
  * ```
  */
 return [
-    'Development' => [
-        'path' => 'dev',
-        'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'frontend/runtime',
-            'frontend/web/assets',
-        ],
-        'setExecutable' => [
-            'yii',
-            'yii_test',
-        ],
-        'setCookieValidationKey' => [
-            'common/config/params-local.php',
-        ],
-    ],
-    'Production' => [
-        'path' => 'prod',
-        'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'frontend/runtime',
-            'frontend/web/assets',
-        ],
-        'setExecutable' => [
-            'yii',
-        ],
-        'setCookieValidationKey' => [
-            'common/config/params-local.php',
-        ],
-    ],
+   'Development' => [
+      'path' => 'dev',
+      'setWritable' => [
+         'backend/runtime',
+         'backend/web/assets',
+         'frontend/runtime',
+         'frontend/web/assets',
+      ],
+      'setExecutable' => [
+         'yii',
+         'yii_test',
+      ],
+      'setCookieValidationKey' => [
+         'backend/config/main-local.php',
+         'frontend/config/main-local.php',
+      ],
+   ],
+   'Production' => [
+      'path' => 'prod',
+      'setWritable' => [
+         'backend/runtime',
+         'backend/web/assets',
+         'frontend/runtime',
+         'frontend/web/assets',
+      ],
+      'setExecutable' => [
+         'yii',
+      ],
+      'setCookieValidationKey' => [
+         'backend/config/main-local.php',
+         'frontend/config/main-local.php',
+      ],
+   ],
 ];
