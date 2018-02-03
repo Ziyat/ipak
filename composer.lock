@@ -4,56 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "984aa1061b0cfc20a28874712bc5d09b",
+    "content-hash": "00d1ac6c4453a5b7d44f0b53d50e2259",
     "packages": [
-        {
-            "name": "abdualiym/yii2-language-class",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Abdualiym/yii2-language-class.git",
-                "reference": "6cc38ba5ac9e9d187fb284f71af54cb9c1967f8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Abdualiym/yii2-language-class/zipball/6cc38ba5ac9e9d187fb284f71af54cb9c1967f8a",
-                "reference": "6cc38ba5ac9e9d187fb284f71af54cb9c1967f8a",
-                "shasum": ""
-            },
-            "require": {
-                "elisdn/yii2-composite-form": "^1.0",
-                "yiisoft/yii2": "~2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "abdualiym\\languageClass\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ziyodilla Mirhanov",
-                    "email": "ziyat@infosystems.uz",
-                    "homepage": "http://infosystems.uz"
-                }
-            ],
-            "description": "Yii2 language table emulator class",
-            "homepage": "http://www.infosystems.uz/",
-            "keywords": [
-                "advanced",
-                "framework",
-                "language",
-                "yii2"
-            ],
-            "time": "2018-01-29T13:19:02+00:00"
-        },
         {
             "name": "almasaeed2010/adminlte",
             "version": "v2.4.2",
@@ -93,6 +45,55 @@
                 "web"
             ],
             "time": "2017-10-09T16:32:18+00:00"
+        },
+        {
+            "name": "arogachev/yii2-excel",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arogachev/yii2-excel.git",
+                "reference": "e8321b9b3e121323a6f6e8cc1df14d72dd6eacc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arogachev/yii2-excel/zipball/e8321b9b3e121323a6f6e8cc1df14d72dd6eacc3",
+                "reference": "e8321b9b3e121323a6f6e8cc1df14d72dd6eacc3",
+                "shasum": ""
+            },
+            "require": {
+                "phpoffice/phpexcel": "1.8.*",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "~2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "arogachev\\excel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Rogachev",
+                    "email": "arogachev90@gmail.com"
+                }
+            ],
+            "description": "ActiveRecord import and export based on PHPExcel for Yii 2 framework",
+            "homepage": "https://github.com/arogachev/yii2-excel",
+            "keywords": [
+                "Active Record",
+                "PHPExcel",
+                "excel",
+                "export",
+                "import",
+                "yii2"
+            ],
+            "time": "2016-07-23T06:45:48+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -151,28 +152,6 @@
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-ui",
-            "version": "1.12.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jqueryui.git",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc",
-                "shasum": null
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
             },
             "type": "bower-asset",
             "license": [
@@ -533,50 +512,6 @@
             "time": "2017-11-15T23:40:40+00:00"
         },
         {
-            "name": "elisdn/yii2-composite-form",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ElisDN/yii2-composite-form.git",
-                "reference": "831f10d0d5b336a1e8a6dcc959f713697ff87334"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ElisDN/yii2-composite-form/zipball/831f10d0d5b336a1e8a6dcc959f713697ff87334",
-                "reference": "831f10d0d5b336a1e8a6dcc959f713697ff87334",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "~2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "elisdn\\compositeForm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Eliseev",
-                    "email": "mail@elisdn.ru",
-                    "homepage": "http://www.elisdn.ru"
-                }
-            ],
-            "description": "Nested forms base class for Yii2 Framework.",
-            "keywords": [
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2017-06-28T11:09:08+00:00"
-        },
-        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.9.3",
             "source": {
@@ -712,255 +647,62 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
-            "name": "la-haute-societe/yii2-save-relations-behavior",
-            "version": "1.3.2",
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/la-haute-societe/yii2-save-relations-behavior.git",
-                "reference": "f1aea759539567a23b7e4897b6cef4df6200c3fc"
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/la-haute-societe/yii2-save-relations-behavior/zipball/f1aea759539567a23b7e4897b6cef4df6200c3fc",
-                "reference": "f1aea759539567a23b7e4897b6cef4df6200c3fc",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": ">=2.0.7"
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
             },
-            "type": "yii2-extension",
+            "type": "library",
             "autoload": {
-                "psr-4": {
-                    "lhs\\Yii2SaveRelationsBehavior\\": "src/"
+                "psr-0": {
+                    "PHPExcel": "Classes/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "LGPL"
             ],
             "authors": [
                 {
-                    "name": "Alban Jubert",
-                    "email": "alban@lahautesociete.com"
-                }
-            ],
-            "description": "Validate and save automatically related Active Record models.",
-            "keywords": [
-                "Behavior",
-                "active-query",
-                "active-record",
-                "database",
-                "extension",
-                "has-many",
-                "has-one",
-                "relations",
-                "yii2"
-            ],
-            "time": "2017-11-03T09:35:34+00:00"
-        },
-        {
-            "name": "mihaildev/yii2-ckeditor",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MihailDev/yii2-ckeditor.git",
-                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
-                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "mihaildev\\ckeditor\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Mihail",
-                    "email": "mihail.kucher@gmail.com",
-                    "homepage": "https://github.com/MihailDev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Yii2 CKEditor",
-            "homepage": "https://github.com/MihailDev/yii2-ckeditor",
-            "keywords": [
-                "CKEditor",
-                "editor",
-                "wysiwyg",
-                "yii"
-            ],
-            "time": "2014-11-19T22:04:08+00:00"
-        },
-        {
-            "name": "mihaildev/yii2-elfinder",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MihailDev/yii2-elfinder.git",
-                "reference": "fe5a9f87daae6511d28aec74fd6b4b94b1a6964e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MihailDev/yii2-elfinder/zipball/fe5a9f87daae6511d28aec74fd6b4b94b1a6964e",
-                "reference": "fe5a9f87daae6511d28aec74fd6b4b94b1a6964e",
-                "shasum": ""
-            },
-            "require": {
-                "studio-42/elfinder": "^2.1.10",
-                "yiisoft/yii2-jui": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "mihaildev\\elfinder\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Mihail",
-                    "email": "mihail.kucher@gmail.com",
-                    "homepage": "https://github.com/MihailDev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Yii2 ElFinder",
-            "homepage": "https://github.com/MihailDev/yii2-elfinder",
-            "keywords": [
-                "elfinder",
-                "filemanager",
-                "yii"
-            ],
-            "time": "2017-01-06T23:35:14+00:00"
-        },
-        {
-            "name": "paulzi/yii2-auto-tree",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paulzi/yii2-auto-tree.git",
-                "reference": "4103fb4b9843470b75cde1d67455e89739f7b9e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paulzi/yii2-auto-tree/zipball/4103fb4b9843470b75cde1d67455e89739f7b9e6",
-                "reference": "4103fb4b9843470b75cde1d67455e89739f7b9e6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "require-dev": {
-                "paulzi/yii2-adjacency-list": "^2.0.3",
-                "paulzi/yii2-materialized-path": "^2.0.6",
-                "paulzi/yii2-nested-intervals": "^1.0.5",
-                "paulzi/yii2-nested-sets": "^1.0.4",
-                "phpunit/dbunit": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "paulzi\\autotree\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PaulZi",
-                    "email": "pavel.zimakoff@gmail.com"
-                }
-            ],
-            "description": "Allow apply multiple tree behavior for ActiveRecord in Yii2",
-            "keywords": [
-                "adjacency list",
-                "auto tree",
-                "materialized path",
-                "nested intervals",
-                "nested sets",
-                "yii2"
-            ],
-            "time": "2016-07-21T14:14:10+00:00"
-        },
-        {
-            "name": "paulzi/yii2-nested-sets",
-            "version": "v1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paulzi/yii2-nested-sets.git",
-                "reference": "78d1aead3cc71005393657435f0234b277632db5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paulzi/yii2-nested-sets/zipball/78d1aead3cc71005393657435f0234b277632db5",
-                "reference": "78d1aead3cc71005393657435f0234b277632db5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "require-dev": {
-                "phpunit/dbunit": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "paulzi\\nestedsets\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Kochetov",
-                    "email": "creocoder@gmail.com"
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
                 },
                 {
-                    "name": "PaulZi",
-                    "email": "pavel.zimakoff@gmail.com"
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
                 }
             ],
-            "description": "Nested Sets Behavior for Yii2",
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
             "keywords": [
-                "nested sets",
-                "yii2"
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
             ],
-            "time": "2016-10-13T22:34:19+00:00"
+            "abandoned": "phpoffice/phpspreadsheet",
+            "time": "2015-05-01T07:00:55+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -1013,64 +755,6 @@
                 "yii"
             ],
             "time": "2017-01-11T14:05:47+00:00"
-        },
-        {
-            "name": "studio-42/elfinder",
-            "version": "2.1.31",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "4cfb7541c672e06581fcbe34bfaca0e233932d9b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/4cfb7541c672e06581fcbe34bfaca0e233932d9b",
-                "reference": "4cfb7541c672e06581fcbe34bfaca0e233932d9b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "suggest": {
-                "barryvdh/elfinder-flysystem-driver": "VolumeDriver for elFinder to use Flysystem as a root.",
-                "google/apiclient": "VolumeDriver GoogleDrive require `google/apiclient:^2.0.",
-                "kunalvarma05/dropbox-php-sdk": "VolumeDriver `Dropbox`2 require `kunalvarma05/dropbox-php-sdk.",
-                "nao-pon/flysystem-google-drive": "require in GoogleDrive network volume mounting with Flysystem."
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Levashov",
-                    "email": "dio@std42.ru",
-                    "homepage": "http://std42.ru"
-                },
-                {
-                    "name": "Troex Nevelin",
-                    "email": "troex@fury.scancode.ru",
-                    "homepage": "http://std42.ru"
-                },
-                {
-                    "name": "Naoki Sawada",
-                    "email": "hypweb@gmail.com",
-                    "homepage": "http://xoops.hypweb.net"
-                },
-                {
-                    "name": "Community contributions",
-                    "homepage": "https://github.com/Studio-42/elFinder/contributors"
-                }
-            ],
-            "description": "File manager for web",
-            "homepage": "http://elfinder.org",
-            "time": "2017-12-27T09:38:20+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1322,52 +1006,6 @@
                 "yii2"
             ],
             "time": "2016-12-20T13:26:02+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-jui",
-            "version": "2.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-jui.git",
-                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
-                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery-ui": "~1.12.1",
-                "yiisoft/yii2": "~2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\jui\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
-                }
-            ],
-            "description": "The Jquery UI extension for the Yii framework",
-            "keywords": [
-                "jQuery UI",
-                "yii2"
-            ],
-            "time": "2017-11-25T15:32:29+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",

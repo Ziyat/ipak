@@ -19,7 +19,22 @@ class m180202_155655_create_reports_table extends Migration
             'mfo_correspondent' => $this->integer(),
             'name_client' => $this->string(),
             'name_correspondent' => $this->string(),
+            'account_correspondent' => $this->integer(),
+            'account_client' => $this->integer(),
+            'document_amount' => $this->integer(),
+            'purpose_of_payment' => $this->string(),
+            'executor' => $this->integer(),
+            'date_message' => $this->integer(),
+            'criterion' => $this->string(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
+            'created_by' => $this->integer()->notNull(),
+            'updated_by' => $this->integer()->notNull(),
         ],$tableOptions);
+
+        $this->addForeignKey('{{%fk-reports_created_by}}', '{{%reports}}', 'created_by', '{{%users}}', 'id', 'RESTRICT', 'RESTRICT');
+        $this->addForeignKey('{{%fk-reports_updated_by}}', '{{%reports}}', 'updated_by', '{{%users}}', 'id', 'RESTRICT', 'RESTRICT');
+
     }
 
     /**

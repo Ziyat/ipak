@@ -19,7 +19,7 @@
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
                     ['label' => 'Меню', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'th', 'url' => ['/gii']],
+                    ['label' => 'Reports', 'icon' => 'file-excel-o', 'url' => ['/reports']],
                 ],
             ]
         ) ?>

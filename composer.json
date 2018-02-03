@@ -1,13 +1,13 @@
 {
-    "name": "cms",
-    "description": "Infosystems CMS",
-    "keywords": ["yii2", "advanced", "CMS"],
-    "homepage": "http://www.infosystems.uz/",
+    "name": "Bank report systems",
+    "description": "",
+    "keywords": ["yii2", "advanced", "Bank report systems"],
+    "homepage": "https://github.com/Ziyat",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "http://git.uzcloud.uz/aripdjanov/cms/issues",
-        "source": "http://git.uzcloud.uz/aripdjanov/cms"
+        "issues": "https://github.com/Ziyat/ipak/issues",
+        "source": "https://github.com/Ziyat/ipak"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -16,15 +16,10 @@
         "yiisoft/yii2": ">=2.0.9",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "mihaildev/yii2-elfinder": "*",
-        "mihaildev/yii2-ckeditor": "*",
         "dmstr/yii2-adminlte-asset": "^2.4",
-        "la-haute-societe/yii2-save-relations-behavior": "^1.2",
         "codemix/yii2-localeurls": "^1.5",
-        "paulzi/yii2-nested-sets": "^1.0",
         "fishvision/yii2-migrate": "*",
-        "paulzi/yii2-auto-tree" : "^1.0",
-        "abdualiym/yii2-language-class": "^1.0"
+        "arogachev/yii2-excel": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
