@@ -23,6 +23,8 @@ class m180202_155655_create_reports_table extends Migration
             'account_client' => $this->integer(),
             'document_amount' => $this->integer(),
             'purpose_of_payment' => $this->string(),
+            'posting_date' => $this->string(),
+            'identifier' => $this->integer(),
             'executor' => $this->integer(),
             'date_message' => $this->integer(),
             'criterion' => $this->string(),

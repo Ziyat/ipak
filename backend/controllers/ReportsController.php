@@ -5,9 +5,11 @@ namespace backend\controllers;
 use Yii;
 use common\entities\Reports;
 use common\entities\ReportsSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ReportsController implements the CRUD actions for Reports model.
@@ -65,9 +67,19 @@ class ReportsController extends Controller
     public function actionCreate()
     {
         $model = new Reports();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if ($model->file) {
+                if(!$model->file = $model->uploadFile($model->id, $model->created_at))
+                {
+                    throw new \DomainException('Ошибка при сохранения файла');
+                }
+
+            }else{
+                throw new \DomainException('Файл не указан');
+            }
+
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
