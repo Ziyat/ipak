@@ -11,9 +11,7 @@ $this->title = 'Reports';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="reports-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<!--    --><?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Reports', ['create'], ['class' => 'btn btn-success']) ?>
@@ -22,21 +20,37 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'options'=>['style'=>'white-space: normal;'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'mfo_client',
-            'mfo_correspondent',
             'name_client',
+            'mfo_correspondent',
             'name_correspondent',
-            'account_correspondent',
-            'account_client',
-            'document_amount',
-            'purpose_of_payment',
-            'executor',
-            'date_message',
-            'criterion',
+//            'account_correspondent',
+//            'account_client',
+//            'document_amount',
+//            'purpose_of_payment',
+//            'executor',
+            'date_message:date',
+            [
+                'attribute' => 'created_at',
+                'value' => 'created_at',
+                'format' => 'date',
+                'filter' => \kartik\daterange\DateRangePicker::widget([
+                    'model' => $searchModel,
+                    'attribute'=>'created_at',
+                    'convertFormat'=>true,
+                    'pluginOptions'=>[
+                        'locale'=>[
+                            'format'=>'Y-m-d',
+                            'separator' => 'to',
+                        ]
+                    ]
+                ])
+            ],
+//            'criterion',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

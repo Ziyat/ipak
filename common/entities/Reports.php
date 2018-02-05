@@ -59,8 +59,14 @@ class Reports extends \yii\db\ActiveRecord
     public function uploadFile($id, $created_at)
     {
         $path = Yii::getAlias('@frontend/web/upload/');
-        $url = 'upload/';
         $filename = $id . $created_at . '.' . $this->file->extension;
+        $url = 'upload/';
+        if (!is_dir($path))
+        {
+            mkdir($path,0700);
+        }
+
+
         if ($this->file->saveAs($path . $filename)) {
 
             $data = Excel::widget([
@@ -101,7 +107,7 @@ class Reports extends \yii\db\ActiveRecord
                             $arr[$i]['name_correspondent']= $item;
                             break;
                         case 'H':
-                            $arr[$i]['document_amount'] = trim($item);
+                            $arr[$i]['document_amount'] = (int) trim(substr(str_replace(',','',$item),0,-1));
                             break;
                         case 'I':
                             $arr[$i]['purpose_of_payment'] = $item;
@@ -127,7 +133,7 @@ class Reports extends \yii\db\ActiveRecord
 
                             break;
                         case 'N':
-                            $arr[$i]['criterion'] = $item;
+                            $arr[$i]['criterion'] = substr($item,0,-1);
                             break;
                     }
                 }
@@ -139,6 +145,9 @@ class Reports extends \yii\db\ActiveRecord
                 if($key == 0){
                     $thisModel = self::find()->where(['id' => $id])->one();
                     $thisModel->mfo_client = $item['mfo_client'];
+                    $thisModel->mfo_correspondent = $item['mfo_correspondent'];
+                    $thisModel->account_client = $item['account_client'];
+                    $thisModel->name_client = $item['name_client'];
                     $thisModel->account_correspondent = $item['account_correspondent'];
                     $thisModel->name_correspondent = $item['name_correspondent'];
                     $thisModel->document_amount = $item['document_amount'];
@@ -148,22 +157,24 @@ class Reports extends \yii\db\ActiveRecord
                     $thisModel->executor = $item['executor'];
                     $thisModel->date_message = $item['date_message'];
                     $thisModel->criterion = $item['criterion'];
-                    VarDumper::dump($thisModel,100,true);die;
-                    $thisModel->save();
+                    $thisModel->save(false);
                 }
 
-//                $model = new Reports();
-//                $model->mfo_client = $item['mfo_client'];
-//                $model->account_correspondent = $item['account_correspondent'];
-//                $model->name_correspondent = $item['name_correspondent'];
-//                $model->document_amount = $item['document_amount'];
-//                $model->purpose_of_payment = $item['purpose_of_payment'];
-//                $model->posting_date = $item['posting_date'];
-//                $model->identifier = $item['identifier'];
-//                $model->executor = $item['executor'];
-//                $model->date_message = $item['date_message'];
-//                $model->criterion = $item['criterion'];
-//                $model->save();
+                $model = new Reports();
+                $model->mfo_client = $item['mfo_client'];
+                $model->mfo_correspondent = $item['mfo_correspondent'];
+                $model->account_client = $item['account_client'];
+                $model->name_client = $item['name_client'];
+                $model->account_correspondent = $item['account_correspondent'];
+                $model->name_correspondent = $item['name_correspondent'];
+                $model->document_amount = $item['document_amount'];
+                $model->purpose_of_payment = $item['purpose_of_payment'];
+                $model->posting_date = $item['posting_date'];
+                $model->identifier = $item['identifier'];
+                $model->executor = $item['executor'];
+                $model->date_message = $item['date_message'];
+                $model->criterion = $item['criterion'];
+                $model->save(false);
 
             }
 

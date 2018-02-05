@@ -2,6 +2,7 @@
 
 namespace common\entities;
 
+use kartik\daterange\DateRangeBehavior;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -12,6 +13,22 @@ use common\entities\Reports;
  */
 class ReportsSearch extends Reports
 {
+
+    public $createTimeRange;
+    public $createTimeStart;
+    public $createTimeEnd;
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => DateRangeBehavior::className(),
+                'attribute' => 'createTimeRange',
+                'dateStartAttribute' => 'createTimeStart',
+                'dateEndAttribute' => 'createTimeEnd',
+            ]
+        ];
+    }
     /**
      * @inheritdoc
      */
@@ -20,6 +37,7 @@ class ReportsSearch extends Reports
         return [
             [['id', 'mfo_client', 'mfo_correspondent', 'account_correspondent', 'account_client', 'document_amount', 'executor', 'date_message'], 'integer'],
             [['name_client', 'name_correspondent', 'purpose_of_payment', 'criterion'], 'safe'],
+            [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/'],
         ];
     }
 
@@ -53,7 +71,7 @@ class ReportsSearch extends Reports
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+             $query->where('0=1');
             return $dataProvider;
         }
 
@@ -72,7 +90,10 @@ class ReportsSearch extends Reports
         $query->andFilterWhere(['like', 'name_client', $this->name_client])
             ->andFilterWhere(['like', 'name_correspondent', $this->name_correspondent])
             ->andFilterWhere(['like', 'purpose_of_payment', $this->purpose_of_payment])
-            ->andFilterWhere(['like', 'criterion', $this->criterion]);
+            ->andFilterWhere(['like', 'criterion', $this->criterion])
+            ->andFilterWhere(['>=', 'createdAt', $this->createTimeStart])
+            ->andFilterWhere(['<', 'createdAt', $this->createTimeEnd]);
+
 
         return $dataProvider;
     }
