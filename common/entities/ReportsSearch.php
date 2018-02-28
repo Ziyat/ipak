@@ -59,7 +59,12 @@ class ReportsSearch extends Reports
      */
     public function search($params)
     {
-        $query = Reports::find();
+        if(Yii::$app->user->identity->id == 1){
+            $query = Reports::find();
+        }else{
+
+            $query = Reports::find()->where(['created_by' => Yii::$app->user->identity->id]);
+        }
 
         // add conditions that should always apply here
 

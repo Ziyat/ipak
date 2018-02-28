@@ -50,6 +50,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ])
             ],
+            [
+                    'attribute' => 'created_by',
+                    'label' => 'Добавил',
+                    'value' => function($model){
+                        return (\backend\entities\User::findOne($model->created_by))->name;
+                    }
+            ],
 //            'criterion',
 
             ['class' => 'yii\grid\ActionColumn'],

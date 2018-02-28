@@ -13,7 +13,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
-        "yiisoft/yii2": ">=2.0.9",
+        "yiisoft/yii2": "<=2.0.13",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "dmstr/yii2-adminlte-asset": "^2.4",
