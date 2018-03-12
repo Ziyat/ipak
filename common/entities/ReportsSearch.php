@@ -7,6 +7,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\entities\Reports;
+use yii\helpers\VarDumper;
 
 /**
  * ReportsSearch represents the model behind the search form of `common\entities\Reports`.
@@ -37,6 +38,7 @@ class ReportsSearch extends Reports
         return [
             [['id', 'mfo_client', 'mfo_correspondent', 'account_correspondent', 'account_client', 'document_amount', 'executor', 'date_message'], 'integer'],
             [['name_client', 'name_correspondent', 'purpose_of_payment', 'criterion'], 'safe'],
+            [['created_by'], 'integer'],
             [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/'],
         ];
     }
@@ -62,12 +64,10 @@ class ReportsSearch extends Reports
         if(Yii::$app->user->identity->id == 1){
             $query = Reports::find();
         }else{
-
             $query = Reports::find()->where(['created_by' => Yii::$app->user->identity->id]);
         }
 
         // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -76,7 +76,7 @@ class ReportsSearch extends Reports
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
-             $query->where('0=1');
+//             $query->where('0=1');
             return $dataProvider;
         }
 
@@ -90,12 +90,19 @@ class ReportsSearch extends Reports
             'document_amount' => $this->document_amount,
             'executor' => $this->executor,
             'date_message' => $this->date_message,
+            'created_by' => $this->created_by,
+
         ]);
+//        $query->andFilterWhere([
+//            'created_by' => $this->created_by,
+//            'updated_by' => $this->updated_by,
+//        ]);
 
         $query->andFilterWhere(['like', 'name_client', $this->name_client])
             ->andFilterWhere(['like', 'name_correspondent', $this->name_correspondent])
             ->andFilterWhere(['like', 'purpose_of_payment', $this->purpose_of_payment])
             ->andFilterWhere(['like', 'criterion', $this->criterion])
+            ->andFilterWhere(['like', 'created_by', $this->created_by])
             ->andFilterWhere(['>=', 'createdAt', $this->createTimeStart])
             ->andFilterWhere(['<', 'createdAt', $this->createTimeEnd]);
 

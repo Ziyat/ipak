@@ -121,6 +121,17 @@ class ReportsController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionExport()
+    {
+        $model = new Reports();
+        if (Yii::$app->request->post()) {
+            Reports::export(Reports::find()->all());
+        }
+        return $this->render('export',[
+            'model'=>$model
+        ]);
+    }
+
     /**
      * Finds the Reports model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

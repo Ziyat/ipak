@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use \backend\entities\User;
+use \yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\entities\ReportsSearch */
@@ -22,18 +24,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'options'=>['style'=>'white-space: normal;'],
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'mfo_client',
-            'name_client',
-            'mfo_correspondent',
-            'name_correspondent',
-//            'account_correspondent',
-//            'account_client',
-//            'document_amount',
-//            'purpose_of_payment',
-//            'executor',
-            'date_message:date',
+//            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'created_by',
+                'label' => 'Добавил',
+                'filter' =>  Html::activeDropDownList($searchModel,
+                'created_by',
+                ArrayHelper::map(User::find()->asArray()->all(),'id', 'name'),
+                ['class'=>'form-control','prompt' => 'all users']
+                ),
+                'value' => function($model){
+                    return (\backend\entities\User::findOne($model->created_by))->name;
+                },
+            ],
             [
                 'attribute' => 'created_at',
                 'value' => 'created_at',
@@ -50,13 +53,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ])
             ],
-            [
-                    'attribute' => 'created_by',
-                    'label' => 'Добавил',
-                    'value' => function($model){
-                        return (\backend\entities\User::findOne($model->created_by))->name;
-                    }
-            ],
+            'mfo_client',
+            'name_client',
+//            'mfo_correspondent',
+//            'name_correspondent',
+//            'account_correspondent',
+//            'account_client',
+//            'document_amount',
+//            'purpose_of_payment',
+//            'executor',
+            'date_message:date',
+
+
 //            'criterion',
 
             ['class' => 'yii\grid\ActionColumn'],

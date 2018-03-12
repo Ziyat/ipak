@@ -9,7 +9,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
-    'name' => 'Uztelecom',
+    'name' => 'Bank report system',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'modules' => [
@@ -54,18 +54,6 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
-        ],
-    ],
-    'controllerMap' => [     'elfinder' => [
-            'class' => 'mihaildev\elfinder\PathController',
-            'access' => ['@'],
-            'root' => [
-                'baseUrl' => SITE_FULL_NAME,
-                'basePath' => '@frontend/web',
-                'path' => 'webfiles',
-                'name' => 'webfiles',
-                // 'uploadMaxSize' => '5M',
             ],
         ],
     ],

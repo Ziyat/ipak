@@ -20,6 +20,7 @@
                 'items' => [
                     ['label' => 'Меню', 'options' => ['class' => 'header']],
                     ['label' => 'Reports', 'icon' => 'file-excel-o', 'url' => ['/reports']],
+                    ['label' => 'Export', 'icon' => 'file-excel-o', 'url' => ['/reports/export']],
                 ],
             ]
         ) ?>

@@ -35,6 +35,7 @@ class Reports extends \yii\db\ActiveRecord
 {
 
     public $file;
+    public $exportDateRange;
 
     /**
      * @inheritdoc
@@ -181,6 +182,30 @@ class Reports extends \yii\db\ActiveRecord
             return true;
         }
         return false;
+    }
+
+
+    public static function export($model){
+        return Excel::export([
+	   	'models' => $model,
+	      	'columns' => [
+                'id',
+                'mfo_client',
+                'mfo_correspondent',
+                'name_client',
+                'name_correspondent',
+                'account_correspondent',
+                'account_client',
+                'document_amount',
+                'purpose_of_payment',
+                'executor',
+                'date_message',
+                'criterion',
+	      	],
+	      	'headers' => [
+	      		'created_at' => 'Date Created Content',
+	  		],
+	  ]);
     }
 
 
