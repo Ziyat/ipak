@@ -61,6 +61,7 @@ class ReportsSearch extends Reports
      */
     public function search($params)
     {
+
         if(Yii::$app->user->identity->id == 1){
             $query = Reports::find();
         }else{
@@ -73,13 +74,10 @@ class ReportsSearch extends Reports
         ]);
 
         $this->load($params);
-
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-//             $query->where('0=1');
+            $query->where('0=1');
             return $dataProvider;
         }
-
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -93,18 +91,14 @@ class ReportsSearch extends Reports
             'created_by' => $this->created_by,
 
         ]);
-//        $query->andFilterWhere([
-//            'created_by' => $this->created_by,
-//            'updated_by' => $this->updated_by,
-//        ]);
 
         $query->andFilterWhere(['like', 'name_client', $this->name_client])
             ->andFilterWhere(['like', 'name_correspondent', $this->name_correspondent])
             ->andFilterWhere(['like', 'purpose_of_payment', $this->purpose_of_payment])
             ->andFilterWhere(['like', 'criterion', $this->criterion])
-            ->andFilterWhere(['like', 'created_by', $this->created_by])
-            ->andFilterWhere(['>=', 'createdAt', $this->createTimeStart])
-            ->andFilterWhere(['<', 'createdAt', $this->createTimeEnd]);
+            ->andFilterWhere(['>=', 'created_at', $this->createTimeStart])
+            ->andFilterWhere(['<', 'created_at', $this->createTimeEnd]);
+
 
 
         return $dataProvider;

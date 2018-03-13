@@ -39,16 +39,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'created_at',
-                'value' => 'created_at',
+
                 'format' => 'date',
                 'filter' => \kartik\daterange\DateRangePicker::widget([
                     'model' => $searchModel,
-                    'attribute'=>'created_at',
+                    'attribute'=>'createTimeRange',
+//                    'startAttribute' => 'createTimeStart',
+//                    'endAttribute' => 'createTimeEnd',
                     'convertFormat'=>true,
                     'pluginOptions'=>[
                         'locale'=>[
                             'format'=>'Y-m-d',
-                            'separator' => 'to',
                         ]
                     ]
                 ])

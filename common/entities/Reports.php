@@ -35,7 +35,8 @@ class Reports extends \yii\db\ActiveRecord
 {
 
     public $file;
-    public $exportDateRange;
+    public $start_date;
+    public $end_date;
 
     /**
      * @inheritdoc

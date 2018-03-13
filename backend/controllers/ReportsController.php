@@ -39,7 +39,6 @@ class ReportsController extends Controller
     {
         $searchModel = new ReportsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -125,7 +124,13 @@ class ReportsController extends Controller
     {
         $model = new Reports();
         if (Yii::$app->request->post()) {
-            Reports::export(Reports::find()->all());
+            $post = Yii::$app->request->post();
+            $start_date = strtotime($post['Reports']['start_date']);
+            $end_date = strtotime($post['Reports']['end_date']);
+            Reports::export(Reports::find()
+                ->andWhere(['>', 'created_at', $start_date])
+                ->andWhere(['<=', 'created_at', $end_date])
+                ->all());
         }
         return $this->render('export',[
             'model'=>$model
