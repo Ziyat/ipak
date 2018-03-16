@@ -36,3 +36,6 @@ phpunit.phar
 
 phpstorm runtime
 /.idea
+
+
+*.zip
